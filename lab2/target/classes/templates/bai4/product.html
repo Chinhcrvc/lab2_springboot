@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Form</title>
+  </head>
+  <body>
+    <!-- Form nhập liệu -->
+    <form action="/products/save" method="post">
+      <input name="name" placeholder="Enter name" />
+      <input name="price" placeholder="Enter price" />
+      <button type="submit">Save</button>
+    </form>
+
+    <!-- Hiển thị sản phẩm mặc định -->
+    <h3>Sản phẩm mặc định</h3>
+    <ul>
+      <li th:text="'Name: ' + ${p.name}">name</li>
+      <li th:text="'Price: ' + ${p.price}">price</li>
+    </ul>
+
+    <!-- Hiển thị sản phẩm nhập từ form -->
+    <h3>Sản phẩm nhập từ form</h3>
+    <ul>
+      <li th:text="'Name: ' + ${p.name}">name</li>
+      <li th:text="'Price: ' + ${p.price}">price</li>
+    </ul>
+
+    <!-- Hiển thị danh sách sản phẩm -->
+    <h3>Danh sách sản phẩm</h3>
+    <ul>
+      <th:block th:each="item : ${list}">
+        <li th:text="'Name: ' + ${item.name}">name</li>
+        <li th:text="'Price: ' + ${item.price}">price</li>
+      </th:block>
+    </ul>
+  </body>
+</html>

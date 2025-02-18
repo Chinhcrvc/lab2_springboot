@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/ctrl/ok" method="post">
+      <button>OK1</button>
+      <button formmethod="get">OK2</button>
+      <button formaction="/ctrl/ok?x=5">OK3</button>
+    </form>
+    <span>Kết quả: <span th:if="${method}" th:text="${method}"></span></span>
+  </body>
+</html>
